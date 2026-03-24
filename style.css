@@ -1,0 +1,993 @@
+/* ===================================
+   ClipMaker - Estilos Globais
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===================================
+   Estilos Base
+   =================================== */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ===================================
+   Container Principal
+   =================================== */
+
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 100%;
+    padding: 40px;
+}
+
+/* ===================================
+   Header
+   =================================== */
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.logo-icon {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 20px;
+    display: block;
+    filter: drop-shadow(0 10px 25px rgba(102, 126, 234, 0.3));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.logo-icon .clip-1 {
+    animation: pulse-clip1 2s ease-in-out infinite;
+}
+
+.logo-icon .clip-2 {
+    animation: pulse-clip2 2s ease-in-out infinite 0.3s;
+}
+
+.logo-icon .clip-3 {
+    animation: pulse-clip3 2s ease-in-out infinite 0.6s;
+}
+
+.logo-icon .clip-4 {
+    animation: pulse-clip4 2s ease-in-out infinite 0.9s;
+}
+
+@keyframes pulse-clip1 {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+@keyframes pulse-clip2 {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+@keyframes pulse-clip3 {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+@keyframes pulse-clip4 {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.logo-icon .play-button {
+    animation: play-pulse 2s ease-in-out infinite;
+}
+
+@keyframes play-pulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+    }
+    50% {
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+    }
+}
+
+/* ===================================
+   Formulário
+   =================================== */
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+small {
+    color: #999;
+    display: block;
+    margin-top: 5px;
+}
+
+.hint-text {
+    color: #999;
+    display: block;
+    margin-top: 5px;
+}
+
+/* ===================================
+   Botões
+   =================================== */
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    flex: 1;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 150px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-full-width {
+    width: 100%;
+}
+
+/* ===================================
+   Loading
+   =================================== */
+
+.loading {
+    display: none;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.spinner {
+    border: 4px solid #f0f0f0;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ===================================
+   Resultados
+   =================================== */
+
+.results {
+    margin-top: 40px;
+    display: none;
+}
+
+.results.show {
+    display: block;
+}
+
+.moments-list {
+    margin-bottom: 30px;
+}
+
+.moment-card {
+    background: #f8f9fa;
+    border-left: 4px solid #667eea;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.moment-card h3 {
+    color: #667eea;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.moment-text {
+    color: #333;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.moment-meta {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.badge {
+    background: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+.viral-score {
+    font-weight: 600;
+    color: #764ba2;
+}
+
+/* ===================================
+   Alertas
+   =================================== */
+
+.alert {
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* ===================================
+   Passos
+   =================================== */
+
+.steps {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.step-number {
+    background: #667eea;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.step.active .step-number {
+    background: #764ba2;
+}
+
+/* ===================================
+   Responsivo
+   =================================== */
+
+.results-title {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.results-container {
+    margin-top: 40px;
+}
+
+.clips-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.clips-message {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.generate-button-wrapper {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.generate-button {
+    width: 100%;
+    max-width: 400px;
+}
+
+.clip-download-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.reset-button {
+    width: 100%;
+    max-width: 300px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header p {
+        font-size: 0.95rem;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    button {
+        min-width: auto;
+    }
+
+    .moment-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .steps {
+        gap: 8px;
+    }
+
+    .step-number {
+        width: 24px;
+        height: 24px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .header {
+        margin-bottom: 30px;
+    }
+
+    .header h1 {
+        font-size: 1.75rem;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    input, textarea {
+        padding: 10px 12px;
+        font-size: 16px;
+    }
+
+    textarea {
+        min-height: 120px;
+    }
+
+    button {
+        padding: 12px 16px;
+        font-size: 0.95rem;
+        min-width: auto;
+    }
+
+    .moment-card {
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+
+    .moment-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .moment-text {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+
+    .moment-meta {
+        font-size: 0.8rem;
+        gap: 8px;
+    }
+
+    .badge {
+        padding: 3px 8px;
+        font-size: 0.8rem;
+    }
+
+    .steps {
+        gap: 5px;
+        margin-bottom: 25px;
+    }
+
+    .step {
+        font-size: 0.8rem;
+        gap: 5px;
+    }
+
+    .step-number {
+        width: 22px;
+        height: 22px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .header {
+        margin-bottom: 25px;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+
+    .header p {
+        font-size: 0.9rem;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-size: 0.85rem;
+        margin-bottom: 6px;
+    }
+
+    input, textarea {
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+
+    button {
+        padding: 11px 14px;
+        font-size: 0.9rem;
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover {
+        transform: translateY(0);
+    }
+
+    .moment-card {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .moment-text {
+        font-size: 0.85rem;
+    }
+
+    .badge {
+        padding: 2px 6px;
+        font-size: 0.75rem;
+    }
+
+    #alert {
+        margin-bottom: 15px;
+    }
+}
+
+/* ===================================
+   Animações nos Cards
+   =================================== */
+
+.moment-card {
+    animation: slideInLeft 0.5s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.moment-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.moment-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.moment-card:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.moment-card:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+/* ===================================
+   Viral Rating Visual
+   =================================== */
+
+.viral-rating {
+    display: inline-block;
+    width: 100%;
+    height: 6px;
+    background: #f0f0f0;
+    border-radius: 3px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.viral-rating-bar {
+    height: 100%;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+/* ===================================
+   Pulse Animation
+   =================================== */
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(102, 126, 234, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0); }
+}
+
+.btn-primary:active {
+    animation: pulse 0.6s;
+}
+
+/* ===================================
+   Animações extras
+   =================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ===================================
+   Dark Mode (opcional)
+   =================================== */
+
+/* ===================================
+   Drag & Drop
+   =================================== */
+
+.upload-drag-over {
+    border-color: #667eea !important;
+    background-color: rgba(102, 126, 234, 0.05) !important;
+}
+
+/* ===================================
+   Interações - Tooltips
+   =================================== */
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: max-content;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 6px 10px;
+    position: absolute;
+    z-index: 1000;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    margin-bottom: 5px;
+}
+
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ===================================
+   Contador de Momentos
+   =================================== */
+
+.moment-counter {
+    display: inline-block;
+    background: #667eea;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+/* ===================================
+   Filtro e Controles
+   =================================== */
+
+.controls-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter-group {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.filter-button {
+    padding: 8px 16px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.filter-button:hover {
+    border-color: #667eea;
+    color: #667eea;
+}
+
+.filter-button.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+/* ===================================
+   Edi\u00e7\u00e3o de Clips
+   =================================== */
+
+.moment-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.duration-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.duration-input {
+    width: 60px;
+    padding: 6px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.btn-adjust {
+    padding: 6px 12px;
+    background: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.btn-adjust:hover {
+    background: #e0e0e0;
+}
+
+/* ===================================
+   Copy to Clipboard
+   =================================== */
+
+.copy-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 5px;
+    transition: all 0.2s;
+    margin-left: 8px;
+}
+
+.copy-button:hover {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+}
+
+.copy-button.copied {
+    color: #28a745;
+}
+
+/* ===================================
+   Modal/Preview
+   =================================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s;
+}
+
+.modal-close {
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #999;
+    border: none;
+    background: none;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ===================================
+   Animações nos Cards
+   =================================== */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    }
+
+    .container {
+        background: #0f3460;
+        color: #e0e0e0;
+    }
+
+    .header h1,
+    label {
+        color: #e0e0e0;
+    }
+
+    .header p {
+        color: #b0b0b0;
+    }
+
+    input, textarea {
+        background: #1a1a2e;
+        color: #e0e0e0;
+        border-color: #444;
+    }
+
+    input:focus, textarea:focus {
+        border-color: #667eea;
+    }
+
+    .moment-card {
+        background: #16213e;
+        border-left-color: #667eea;
+    }
+
+    .moment-card h3 {
+        color: #667eea;
+    }
+
+    .moment-text {
+        color: #e0e0e0;
+    }
+
+    .moment-meta {
+        color: #b0b0b0;
+    }
+
+    .badge {
+        background: #1a1a2e;
+        border-color: #444;
+        color: #e0e0e0;
+    }
+
+    .btn-secondary {
+        background: #1a1a2e;
+        color: #e0e0e0;
+        border: 1px solid #444;
+    }
+
+    .btn-secondary:hover {
+        background: #16213e;
+    }
+}
