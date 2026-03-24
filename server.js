@@ -1,3 +1,4 @@
+
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -81,13 +82,14 @@ app.get('/', (req, res) => {
   res.sendFile(join(__dirname, 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 ClipMaker rodando em http://localhost:${PORT}`);
+// 🔥 CORREÇÃO AQUI
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 ClipMaker rodando na porta ${PORT}`);
   console.log(`
 ╔════════════════════════════════════╗
 ║        🎬 CLIPMAKER INICIADO 🎬     ║
 ║                                    ║
-║  Endpoint: http://localhost:${PORT}  ║
+║  Porta: ${PORT}                     ║
 ║  POST /api/analyze - Analisar      ║
 ║  POST /api/generate-clips - Gerar  ║
 ╚════════════════════════════════════╝
